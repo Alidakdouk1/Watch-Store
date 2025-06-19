@@ -1,0 +1,25 @@
+<div class="home-container">
+      <div class="hero-section">
+        <h1>Premium Watch Collection</h1>
+        <p>Discover our exquisite selection of luxury timepieces</p>
+      </div>
+
+      <div class="watches-grid">
+        <app-watch-card 
+          *ngFor="let watch of watches" 
+          [watch]="watch"
+          (buyClicked)="onBuyWatch($event)">
+        </app-watch-card>
+      </div>
+
+      <div *ngIf="watches.length === 0" class="no-watches">
+        <p>No watches available at the moment.</p>
+      </div>
+
+      <app-buy-form 
+        [selectedWatch]="selectedWatch"
+        (formClosed)="onCloseBuyForm()"
+        (orderSubmitted)="onOrderSubmitted($event)">
+      </app-buy-form>
+    </div>
+

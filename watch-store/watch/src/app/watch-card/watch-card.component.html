@@ -1,0 +1,13 @@
+<div class="watch-card">
+      <img [src]="watch.image" [alt]="watch.name" class="watch-image">
+      <div class="watch-info">
+        <h3 class="watch-name">{{ watch.name }}</h3>
+        <p class="watch-brand">{{ watch.brand }}</p>
+        <p class="watch-description">{{ watch.description }}</p>
+        <div class="watch-footer">
+          <span class="watch-price">${{ watch.price | number:
+              '1.0-0' }}</span>         <button class="buy-btn" (click)="onBuyClick()">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
